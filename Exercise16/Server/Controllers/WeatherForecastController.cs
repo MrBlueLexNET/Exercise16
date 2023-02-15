@@ -1,4 +1,4 @@
-using Exercise16.Shared;
+using Exercise16.Shared.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Exercise16.Server.Controllers

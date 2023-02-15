@@ -1,4 +1,4 @@
-namespace Exercise16.Shared
+namespace Exercise16.Shared.Entities
 {
     public class WeatherForecast
     {
