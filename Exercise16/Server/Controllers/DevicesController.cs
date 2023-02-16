@@ -6,37 +6,39 @@ namespace Exercise16.Server.Controllers
 {
     [Route("api/devices")]
     [ApiController]
+    [Produces("application/json", "application/xml")]
     public class DevicesController : ControllerBase
     {
-        // GET: api/<DevicesController>
+
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<DevicesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public string Get(string id)
         {
             return "value";
         }
 
-        // POST api/<DevicesController>
         [HttpPost]
+        [Consumes("appliction/json", "application/xml")]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<DevicesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<DevicesController>/5
+        //[HttpPatch("{id}")]
+        // public async Task<ActionResult<DeviceDto>> PatchEvent(string id, JsonPatchDocument<DeviceDto> patchDocument)
+        //{
+        //return Ok(mapper.Map<DeviceDto>(device));
+        //}
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(string id)
         {
         }
     }

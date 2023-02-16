@@ -1,9 +1,21 @@
 ﻿@page "/"
 
+
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@*<Device MockDataService="devices"></Device>
+
+@code {
+    private List<Exercise16.Shared.Entities.Device> devices; // = new List<Item>();
+
+    [Inject]
+    public IMockDataService MockDataService { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //  throw new ArgumentException();
+        devices = (await MockDataService.GetAsync()).ToList();
+    }
+}*@

@@ -1,0 +1,35 @@
+﻿@page "/deviceoverview"
+
+<h2>Device Overview</h2>
+
+@*//Must have when working with a async call ex. API *@
+@if (Devices == null)
+{
+    <p><em>Loading ...</em></p>
+
+}
+else
+{
+ 
+<table class="table table-light">
+    <thead class="table-primary">
+        <tr>
+            <th>DeviceId</th>
+            <th>Name</th>
+            <th>Online</th>
+            <th>LocationId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var device in Devices)
+        {
+            <tr>
+                 <td>@device.DeviceId</td>
+                 <td>@device.Name</td>
+                 <td>@device.Online</td>
+                 <td>@device.LocationId</td>
+            </tr>
+        }
+    </tbody>
+    </table>
+}
