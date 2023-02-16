@@ -4,7 +4,7 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Exercise16.Client.Models
 {
-    public class MockDataService
+    public class MockDataService : IMockDataService
     {
         private static List<Device>? devices = default!;
         private static List<Location> locations = default!;
