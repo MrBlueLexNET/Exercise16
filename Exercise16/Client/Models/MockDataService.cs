@@ -38,12 +38,12 @@ namespace Exercise16.Client.Models
             //throw new NotImplementedException();
             return new List<Device>()
             {
-                new Device{Name = "IRB 760", LocationId = 1, Online = true },
-                new Device{Name = "IRB 1010", LocationId = 1, Online = false },
-                new Device{Name = "IRB 1010", LocationId = 2, Online = true },
-                new Device{Name = "IRB 8700", LocationId = 2, Online = false },
-                new Device{Name = "IRB 1010", LocationId = 3, Online = true },
-                new Device{Name = "IRB 8700", LocationId = 4, Online = true }
+                new Device{DeviceId = "4dacb4ebe7404bc38819a2aea0bccc0c", Name = "IRB 760", LocationId = 1, Online = true },
+                new Device{DeviceId = "5dacb4ebe7404bc38819a2aea0bccc0c", Name = "IRB 1010", LocationId = 1, Online = false },
+                new Device{DeviceId = "6dacb4ebe7404bc38819a2aea0bccc0c",Name = "IRB 1010", LocationId = 2, Online = true },
+                new Device{DeviceId = "7dacb4ebe7404bc38819a2aea0bccc0c",Name = "IRB 8700", LocationId = 2, Online = false },
+                new Device{DeviceId = "8dacb4ebe7404bc38819a2aea0bccc0c",Name = "IRB 1010", LocationId = 3, Online = true },
+                new Device{DeviceId = "9dacb4ebe7404bc38819a2aea0bccc0c",Name = "IRB 8700", LocationId = 4, Online = true }
             };
         }
 
@@ -58,5 +58,9 @@ namespace Exercise16.Client.Models
             };
         }
 
+        public Task<Device> GetAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

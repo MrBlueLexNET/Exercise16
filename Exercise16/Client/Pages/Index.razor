@@ -1,48 +1,38 @@
 ﻿@page "/"
+@using Exercise16.Shared.Entities;
 
+<h1>Hello, data binding in Blazor!</h1>
+<div>
 
-<PageTitle>Index</PageTitle>
+    <h2>One way data binding</h2>
+    Employee first name: <label>@Employee.FirstName</label>
+    Employee last name: <label>@Employee.LastName</label>
+</div>
 
-@*Dashboard | Devices |  Energy Consumption | Statistics (Enerdata) | Analysis and projections
+<div>
+    <h2>One way data binding on form controls</h2>
+    Employee first name: 
+    <input value="@Employee.FirstName"   />
+    Employee last name: 
+    <input value="@Employee.LastName" />
+</div>
 
-Historical Production Data
+<div>
+    <h2>Two way data binding</h2>
+    Employee first name: 
+    <input @bind="@Employee.FirstName" />
+    Employee last name: 
+    <input @bind="@Employee.LastName" />
+</div>
 
-Daily Stats
+<div>
+    <h2>Two way data binding on a different event</h2>
+    Employee first name: 
+    <input @bind-value="@Employee.FirstName" @bind-value:event="oninput" />
+    Employee last name: 
+    <input @bind-value="@Employee.LastName" @bind-value:event="oninput" />
+</div>
 
-Online 
-
-Offline
-
-StandBy 
-
-Reporting Errors
-
-Need maintenance
-
-Central IME provides an in-depth, historical and forward-looking view of all the Assets Industrial Machinery and Equipment to help you understand 
-evolving plant dynamics and gain a competitive edge.
-Analyze specific site, or get a regional, national or global perspective with up-to-date- and historic information for every production site.
-
-Benefits
-— Assess capacity and gain the fullest picture of production: analyze every possible element of capacity and perform forward looking analysis, with comprehensive data for everyfor every production site, going back in time
-— Make informed trading and investment decisions: develop strategies to respond to planned and unplanned maintenance, and assess your competitors' relative positions with access to robust ownership and operator data
-— Quickly access key metrics via our helpful dashboard, effortlessly integrate our data into your forecast models, understand the complex with our simplified flow diagrams, and access direct support from committed analysts.
-
-
-
-*@
-
-@*<Device MockDataService="devices"></Device>
-
-@code {
-    private List<Exercise16.Shared.Entities.Device> devices; // = new List<Item>();
-
-    [Inject]
-    public IMockDataService MockDataService { get; set; } = default!;
-
-    protected override async Task OnInitializedAsync()
-    {
-        //  throw new ArgumentException();
-        devices = (await MockDataService.GetAsync()).ToList();
-    }
-}*@
+<div>
+    <button @onclick="Button_Click">Click me</button>
+</div>

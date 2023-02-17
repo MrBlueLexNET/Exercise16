@@ -5,5 +5,6 @@ namespace Exercise16.Client.Services
     public interface IMockDataService
     {
         Task<IEnumerable<Device>> GetAsync();
+        Task<Device> GetAsync(string id);
     }
 }

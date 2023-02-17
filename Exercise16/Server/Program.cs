@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 
-namespace Exercise16
+namespace Exercise16.Server
 {
     public class Program
     {
@@ -9,6 +10,11 @@ namespace Exercise16
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddDbContext<AppDbContext>(options => {
+                options.UseSqlServer(
+                    builder.Configuration["ConnectionStrings:DefaultConnection"]);
+            });
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();

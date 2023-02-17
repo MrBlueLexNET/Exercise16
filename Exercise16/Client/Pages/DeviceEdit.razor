@@ -1,0 +1,21 @@
+﻿@page "/deviceedit"
+@page "/deviceedit/{DeviceId}"
+
+<section class="">
+
+    <h1 class="page-title">Details for device: @Device.Name</h1>
+    <EditForm Model="@Device">
+
+        <div class="row mb-3">
+            <label for="Name" class="col-form-label col-md-3"></label>
+            <div class="col-md-8">
+                <InputText id="Name" @bind-Value="@Device.Name" class="form-control col-md-8" placeholder="Enter Name"></InputText>
+
+            </div>
+
+        </div>
+
+
+    </EditForm>
+
+</section>

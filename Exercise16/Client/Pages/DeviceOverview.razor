@@ -26,7 +26,10 @@ else
             <tr>
                  <td>@device.DeviceId</td>
                  <td>@device.Name</td>
-                 <td>@device.Online</td>
+                    <td>
+                    <span class="d-inline-block"></span>
+                        <span><input type="checkbox" readonly checked="@device.Online" /></span>
+                    </td>
                  <td>@device.LocationId</td>
             </tr>
         }
