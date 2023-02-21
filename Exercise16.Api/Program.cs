@@ -6,7 +6,7 @@ namespace Exercise16.Api
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<Exercise16ApiContext>(options =>
@@ -20,6 +20,8 @@ namespace Exercise16.Api
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
+            await app.SeedDataAsync();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Exercise16.Api.Data;
 using Exercise16.Shared.Entities;
 
-namespace Exercise16.Api
+namespace Exercise16.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -25,10 +25,10 @@ namespace Exercise16.Api
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Device>>> GetDevice()
         {
-          if (_context.Device == null)
-          {
-              return NotFound();
-          }
+            if (_context.Device == null)
+            {
+                return NotFound();
+            }
             return await _context.Device.ToListAsync();
         }
 
@@ -36,10 +36,10 @@ namespace Exercise16.Api
         [HttpGet("{id}")]
         public async Task<ActionResult<Device>> GetDevice(string id)
         {
-          if (_context.Device == null)
-          {
-              return NotFound();
-          }
+            if (_context.Device == null)
+            {
+                return NotFound();
+            }
             var device = await _context.Device.FindAsync(id);
 
             if (device == null)
@@ -86,10 +86,10 @@ namespace Exercise16.Api
         [HttpPost]
         public async Task<ActionResult<Device>> PostDevice(Device device)
         {
-          if (_context.Device == null)
-          {
-              return Problem("Entity set 'Exercise16ApiContext.Device'  is null.");
-          }
+            if (_context.Device == null)
+            {
+                return Problem("Entity set 'Exercise16ApiContext.Device'  is null.");
+            }
             _context.Device.Add(device);
             try
             {
