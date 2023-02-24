@@ -1,11 +1,28 @@
 {
-    "version": "2.0",
-    "logging": {
-        "applicationInsights": {
-            "samplingSettings": {
-                "isEnabled": true,
-                "excludedTypes": "Request"
-            }
-        }
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
     }
+  },
+  "openApi": {
+    "info": {
+      "version": "1.0.0",
+      "title": "Backend to The Machine Park with Azure Functions",
+      "description": "An API for administration of Devices using Table Storage",
+      "termsOfService": "https://github.com/MrBlueLexNET/Exercise16",
+      "contact": {
+        "name": "Mr Blue",
+        "email": "mail@gmail.com",
+        "url": ""
+      },
+      "license": {
+        "name": "MIT",
+        "url": "http://opensource.org/licenses/MIT"
+      }
+    }
+  }
 }
