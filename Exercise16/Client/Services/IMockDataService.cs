@@ -6,5 +6,7 @@ namespace Exercise16.Client.Services
     {
         Task<IEnumerable<Device>> GetAsync();
         Task<Device> GetAsync(string id);
+
+        Task<Device?> PostAsync(CreateDevice createDevice);
     }
 }

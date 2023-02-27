@@ -12,7 +12,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise16.Api", "Exercise1
 		{5973535B-74D0-451F-B929-7F9835AF3190} = {5973535B-74D0-451F-B929-7F9835AF3190}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise17.Func", "Exercise17.Func\Exercise17.Func.csproj", "{06F202E6-A52E-4FEB-93DB-4DFA9A1CD188}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise17.Func", "Exercise17.Func\Exercise17.Func.csproj", "{06F202E6-A52E-4FEB-93DB-4DFA9A1CD188}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5973535B-74D0-451F-B929-7F9835AF3190} = {5973535B-74D0-451F-B929-7F9835AF3190}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

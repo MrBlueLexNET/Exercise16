@@ -1,20 +1,28 @@
 ﻿using Exercise16.Client.Services;
 using Exercise16.Shared.Entities;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
+using System.Diagnostics;
 
 namespace Exercise16.Client.Pages
 {
     public partial class DeviceEdit
     {
-        [Inject]
-        public  IMockDataService? MockDataService { get; set; }
-        [Parameter]
-        public string DeviceId { get; set; } = string.Empty;
-        public Device Device { get; set; } = new Device();
+        private CreateDevice createDevice = new CreateDevice();
+        private EditContext editContext = default!;
 
-        protected override async Task OnInitializedAsync()
+        [Parameter]
+        public EventCallback<CreateDevice> AddDevice { get; set; }
+
+        protected override void OnInitialized()
         {
-            Device = await MockDataService.GetAsync(DeviceId);
+            editContext = new EditContext(createDevice);
+        }
+
+        public async Task OnAddDevice()
+        {
+            await AddDevice.InvokeAsync(createDevice);
+            createDevice.Name = string.Empty;
         }
     }
 }

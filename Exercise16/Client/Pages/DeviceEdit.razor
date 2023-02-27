@@ -3,19 +3,18 @@
 
 <section class="">
 
-    <h1 class="page-title">Details for device: @Device.Name</h1>
-    <EditForm Model="@Device">
 
-        <div class="row mb-3">
-            <label for="Name" class="col-form-label col-md-3"></label>
-            <div class="col-md-8">
-                <InputText id="Name" @bind-Value="@Device.Name" class="form-control col-md-8" placeholder="Enter Name"></InputText>
-
+    <EditForm EditContext="editContext" OnValidSubmit="OnAddDevice" id="deviceForm" class="py-4 container">
+        <div class="input-group input-group-lg">
+            <InputText @bind-Value="createDevice.Name" type="text" class="form-control" id="todoInput" placeholder="Add todo..." autofocus></InputText>
+            @* <ValidationMessage For="@(() => createItem.Text)"></ValidationMessage>*@
+            <div class="input-group-append input-group-lg">
+                <button type="submit" id="addItemBtn" class="btn btn-info">ADD</button>
             </div>
-
         </div>
-
-
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
     </EditForm>
 
 </section>
+
