@@ -7,11 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise16.Client", "Exerci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise16.Shared", "Exercise16\Shared\Exercise16.Shared.csproj", "{5973535B-74D0-451F-B929-7F9835AF3190}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise16.Api", "Exercise16.Api\Exercise16.Api.csproj", "{CF5E7C2B-B439-4F89-A861-F59F5BC01064}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5973535B-74D0-451F-B929-7F9835AF3190} = {5973535B-74D0-451F-B929-7F9835AF3190}
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise17.Func", "Exercise17.Func\Exercise17.Func.csproj", "{06F202E6-A52E-4FEB-93DB-4DFA9A1CD188}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5973535B-74D0-451F-B929-7F9835AF3190} = {5973535B-74D0-451F-B929-7F9835AF3190}
@@ -31,10 +26,6 @@ Global
 		{5973535B-74D0-451F-B929-7F9835AF3190}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5973535B-74D0-451F-B929-7F9835AF3190}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5973535B-74D0-451F-B929-7F9835AF3190}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CF5E7C2B-B439-4F89-A861-F59F5BC01064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF5E7C2B-B439-4F89-A861-F59F5BC01064}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF5E7C2B-B439-4F89-A861-F59F5BC01064}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF5E7C2B-B439-4F89-A861-F59F5BC01064}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06F202E6-A52E-4FEB-93DB-4DFA9A1CD188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{06F202E6-A52E-4FEB-93DB-4DFA9A1CD188}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06F202E6-A52E-4FEB-93DB-4DFA9A1CD188}.Release|Any CPU.ActiveCfg = Release|Any CPU
