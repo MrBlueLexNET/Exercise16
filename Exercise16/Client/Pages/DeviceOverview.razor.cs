@@ -10,11 +10,11 @@ namespace Exercise16.Client.Pages
         private List<Device> items = new List<Device>();
 
         [Inject]
-        public IMockDataService MockDataService { get; set; } = default!;
+        public IAppClient AppClient { get; set; } = default!;
 
         protected override async Task OnInitializedAsync()
         {
-            var res = await MockDataService.GetAsync();
+            var res = await AppClient.GetAsync();
             if (res is not null)
                 items = res.ToList();
         }
@@ -26,7 +26,7 @@ namespace Exercise16.Client.Pages
                 throw new ArgumentNullException(nameof(createDevice));
             }
 
-            var device = await MockDataService.PostAsync(createDevice);
+            var device = await AppClient.PostAsync(createDevice);
 
             if (device is null)
                 throw new ArgumentNullException(nameof(device));

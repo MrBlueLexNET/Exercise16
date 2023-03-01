@@ -13,7 +13,8 @@ namespace Exercise16.Client
             builder.RootComponents.Add<App>("#app");
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
-            builder.Services.AddHttpClient<IMockDataService, MockDataService>();
+            //builder.Services.AddHttpClient<IMockDataService, MockDataService>();
+            builder.Services.AddHttpClient<IAppClient, AppClient>();
 
             await builder.Build().RunAsync();
         }
