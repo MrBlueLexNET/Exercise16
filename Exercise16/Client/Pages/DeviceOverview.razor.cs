@@ -7,7 +7,7 @@ namespace Exercise16.Client.Pages
 {
     public partial class DeviceOverview
     {
-        private List<Device> items = new List<Device>();
+        private List<Device> devices = new List<Device>();
 
         [Inject]
         public IAppClient AppClient { get; set; } = default!;
@@ -16,7 +16,7 @@ namespace Exercise16.Client.Pages
         {
             var res = await AppClient.GetAsync();
             if (res is not null)
-                items = res.ToList();
+                devices = res.ToList();
         }
 
         private async Task AddItem(CreateDevice createDevice)
@@ -31,7 +31,7 @@ namespace Exercise16.Client.Pages
             if (device is null)
                 throw new ArgumentNullException(nameof(device));
 
-            items.Add(device);
+            devices.Add(device);
         }
     }
 }

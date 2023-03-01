@@ -9,6 +9,6 @@ namespace Exercise17.Func.Helpers
     public class TableNames
     {
         public const string TableName = "Devices";
-        public const string PartionKey = "Exercice17";
+        public const string PartionKey = "Exercise17";
     }
 }

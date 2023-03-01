@@ -24,7 +24,7 @@ namespace Exercise16.Client.Services
 
         public async Task<IEnumerable<Device>?> GetAsync()
         {
-            return await httpClient.GetFromJsonAsync<IEnumerable<Device>>("api/todos");
+            return await httpClient.GetFromJsonAsync<IEnumerable<Device>>("api/devices");
         }
 
         public async Task<Device?> PostAsync(CreateDevice createDevice)
