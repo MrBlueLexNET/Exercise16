@@ -19,6 +19,7 @@ namespace Exercise16.Client
             builder.Services.AddHttpClient<IAppClient, AppClient>();
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddScoped<ApplicationState>();
+            builder.Services.AddScoped<ToastService>();
 
             await builder.Build().RunAsync();
         }
