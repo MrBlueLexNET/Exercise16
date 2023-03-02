@@ -1,7 +1,7 @@
 ﻿@page "/"
 @using Exercise16.Shared.Entities;
 
-<h1>Hello, data binding in Blazor!</h1>
+@*<h1>Hello, data binding in Blazor!</h1>
 <div>
 
     <h2>One way data binding</h2>
@@ -35,4 +35,9 @@
 
 <div>
     <button @onclick="Button_Click">Click me</button>
-</div>
+</div>*@
+
+@foreach (var widgetType in Widgets)
+{
+    <DynamicComponent Type="widgetType"></DynamicComponent>
+}

@@ -1,4 +1,5 @@
-﻿using Exercise16.Shared.Entities;
+﻿using Exercise16.Client.Widgets;
+using Exercise16.Shared.Entities;
 
 namespace Exercise16.Client.Pages
 {
@@ -9,8 +10,8 @@ namespace Exercise16.Client.Pages
         {
             Employee = new Employee
             {
-                FirstName = "Jean-Yves",
-                LastName = "Michel",
+                FirstName = "OnInitializedAsync FirstName",
+                LastName = "Michel LastName",
             };
 
             return base.OnInitializedAsync();
@@ -18,7 +19,7 @@ namespace Exercise16.Client.Pages
 
         public void Button_Click()
         {
-            Employee.FirstName = "J-Y";
+            Employee.FirstName = "Button_Click FirstName";
 
         }
 
@@ -26,5 +27,8 @@ namespace Exercise16.Client.Pages
         {
 
         }
+
+        //public List<Type> Widgets { get; set; } = new List<Type>() { typeof(DeviceCountWidget), typeof(InboxWidget) };
+        public List<Type> Widgets { get; set; } = new List<Type>() {typeof(InboxWidget) };
     }
 }
